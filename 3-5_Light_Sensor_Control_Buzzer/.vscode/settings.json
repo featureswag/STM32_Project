@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "stm32f10x.h": "c",
+        "light_sensor.h": "c"
+    }
+}
