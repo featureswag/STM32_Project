@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stm32f10x.h": "c",
+        "compare": "c",
+        "cstdint": "c"
+    }
+}
