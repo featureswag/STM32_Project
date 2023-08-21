@@ -1,5 +1,10 @@
 #include "stm32f10x.h"                  // Device header
 
+/* *
+    * @brief: initialize ADC
+    * @param: none
+    * @retval: none
+*/
 void AD_Init(void)
 {
     /* *
@@ -29,7 +34,7 @@ void AD_Init(void)
         -* c. configure ADC sample time 
             sample time = 55.5 cycles = 1/12MHz * 55.5 = 4.625us
     */
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);
+    ADC_RegularChannelConfig(ADC1,ADC_Channel_0, 1, ADC_SampleTime_55Cycles5);
 
     /**
      * 4. ADC Configuration
@@ -48,5 +53,40 @@ void AD_Init(void)
     ADC_InitStructure.ADC_ContinuousConvMode = DISABLE; // single conversion mode
     ADC_InitStructure.ADC_ScanConvMode = DISABLE; // single channel
     ADC_InitStructure.ADC_NbrOfChannel = 1; // 1 channel
-    ADC_Init(ADC1, &ADC_InitStructure);
+    ADC_Init(ADC1,&ADC_InitStructure);
+
+    /* *
+    * 5. Enable ADC
+        use ADC_Cmd() function
+    */
+    ADC_Cmd(ADC1,ENABLE);
+
+    /* *
+    * 6. ADC Calibration
+        -* a. Enable ADC reset calibration register
+        -* b. Check the ADC reset calibration register until the end of the reset calibration
+        -* c. Start ADC calibration
+        -* d. Check the ADC calibration until the end of the calibration
+        -* e. Read the ADC calibration value
+    */
+    ADC_ResetCalibration(ADC1);
+    while(ADC_GetResetCalibrationStatus(ADC1) == SET);/* wait until the end of the reset 
+                                                         calibration.*/
+    ADC_StartCalibration(ADC1);
+    while(ADC_GetCalibrationStatus(ADC1) == SET);/* wait until the end of the calibration*/
+}
+
+/* *
+    * @brief: Get ADC value
+    * @param: none
+    * @retval: ADC value
+*/
+uint16_t AD_GetValue(void)
+{
+    ADC_SoftwareStartConvCmd(ADC1,ENABLE);
+    while(ADC_GetFlagStatus(ADC1,ADC_FLAG_EOC) == RESET);/*wait until the end of conversion
+                                                            sample time = 55.5 cycles + 12.5 cycles --> 68 cycles 
+                                                            time --> 1/(72MHz/6) = 1/12MHz
+                                                            1/12MHz * 68 = 5.666us*/
+    return ADC_GetConversionValue(ADC1);
 }
