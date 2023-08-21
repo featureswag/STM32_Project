@@ -1,0 +1,6 @@
+--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\Startup -I.\Library -I.\Library\inc -I.\Library\src -I.\System -I.\User -I.\Hardware
+-I "G:\800 - Github\STM32_Project\7-1_ADµ¥Í¨µÀ\RTE"
+-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+-I C:\Keil_v5\ARM\CMSIS\Include
+-D__UVISION_VERSION="514" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER
+-o .\objects\stm32f10x_dbgmcu.o --omf_browse .\objects\stm32f10x_dbgmcu.crf --depend .\objects\stm32f10x_dbgmcu.d "Library\src\stm32f10x_dbgmcu.c"
