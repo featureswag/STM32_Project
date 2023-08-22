@@ -14,7 +14,6 @@
                 "C:\\Keil_v5\\ARM\\ARMCC\\include\\rw"
             ],
             "defines": [
-                "stm32f10x_md",
                 "USE_STDPERIPH_DRIVER",
                 "__CC_ARM",
                 "__arm__",
