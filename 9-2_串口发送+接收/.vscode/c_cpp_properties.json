@@ -3,18 +3,17 @@
         {
             "name": "Target 1",
             "includePath": [
-                "g:\\800 - Github\\STM32_Project\\4-1_OLED显示屏\\Startup",
-                "g:\\800 - Github\\STM32_Project\\4-1_OLED显示屏\\Library",
-                "g:\\800 - Github\\STM32_Project\\4-1_OLED显示屏\\Library\\inc",
-                "g:\\800 - Github\\STM32_Project\\4-1_OLED显示屏\\Library\\src",
-                "g:\\800 - Github\\STM32_Project\\4-1_OLED显示屏\\System",
-                "g:\\800 - Github\\STM32_Project\\4-1_OLED显示屏\\User",
-                "g:\\800 - Github\\STM32_Project\\4-1_OLED显示屏\\Hardware",
+                "g:\\800 - Github\\STM32_Project\\9-2_串口发送+接收\\Startup",
+                "g:\\800 - Github\\STM32_Project\\9-2_串口发送+接收\\Library",
+                "g:\\800 - Github\\STM32_Project\\9-2_串口发送+接收\\Library\\inc",
+                "g:\\800 - Github\\STM32_Project\\9-2_串口发送+接收\\Library\\src",
+                "g:\\800 - Github\\STM32_Project\\9-2_串口发送+接收\\System",
+                "g:\\800 - Github\\STM32_Project\\9-2_串口发送+接收\\User",
+                "g:\\800 - Github\\STM32_Project\\9-2_串口发送+接收\\Hardware",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include\\rw"
             ],
             "defines": [
-                "STM32F10X_MD",
                 "USE_STDPERIPH_DRIVER",
                 "__CC_ARM",
                 "__arm__",
