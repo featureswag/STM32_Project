@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "stm32f10x.h": "c",
+        "compare": "cpp",
+        "cstdint": "cpp",
+        "serial.h": "c",
+        "string": "c",
+        "array": "c",
+        "string_view": "c",
+        "stdio.h": "c",
+        "led.h": "c",
+        "string.h": "c"
+    }
+}
